@@ -1,13 +1,9 @@
-# Portfolio
-with open("utf8_text.txt", "w", encoding="UTF-8") as file:
-    file.write("Hog Rider is not working for the other person but the question of how something invisible")
-
-with open("utf8_text.txt", "r", encoding="UTF-8") as file:
-    sentence = file.read()
-
-print(sentence)
-search_word = input().strip().lower()
-
-highlighted_sentence = sentence.replace(search_word, f"*{search_word}*")
-
-print(highlighted_sentence) 
+<!DOCTYPE html><html><body>
+<input type="file" onchange="f(event)"><input id="w" placeholder="Word">
+<div id="o" style="white-space:pre-wrap"></div>
+<script>
+let t='';
+function f(e){let r=new FileReader();r.onload=x=>t=x.target.result;r.readAsText(e.target.files[0])}
+w.oninput=_=>o.innerHTML=t&&w.value?t.replace(new RegExp('\\b('+w.value.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')\\b','gi'),'<mark>$1</mark>'):t
+</script>
+</body></html>
